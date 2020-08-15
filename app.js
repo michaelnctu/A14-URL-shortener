@@ -6,6 +6,8 @@ const mongoose = require('mongoose') // 載入 mongoose
 
 const exphbs = require('express-handlebars')
 
+const randomURL = require('./routes/modules/randomURL')
+
 
 mongoose.connect('mongodb://localhost/shorten-url') // 設定連線到 mongoDB
 
@@ -21,10 +23,14 @@ app.set('view engine', 'handlebars')
 
 app.get('/', (req, res) => {
   res.render('index')
+
 })
 
 app.post('/', (req, res) => {
   console.log('req', req.body)
+  URL = randomURL()
+  console.log(URL)
+  res.render('finished', { URL })
 })
 
 

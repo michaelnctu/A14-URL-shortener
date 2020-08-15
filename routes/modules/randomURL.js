@@ -1,6 +1,6 @@
 
 //產生密碼
-function generateURL() {
+function randomURL() {
   // define things user might want
   const lowerCaseLetters = 'abcdefghijklmnopqrstuvwxyz'
   const upperCaseLetters = lowerCaseLetters.toUpperCase()
@@ -30,4 +30,4 @@ function sample(array) {
 }
 
 // export generatePassword function for other files to use
-module.exports = generateURL
+module.exports = randomURL
