@@ -14,6 +14,8 @@ mongoose.connect('mongodb://localhost/shorten-url') // 設定連線到 mongoDB
 const bodyParser = require('body-parser')
 const routes = require('./routes')
 
+const urlData = require('./models/url')
+
 app.use(bodyParser.urlencoded({ extended: true }))
 
 //default handlebars
@@ -28,9 +30,11 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
   console.log('req', req.body)
-  URL = randomURL()
+  URL = randomURL() //亂五位數
   console.log(URL)
+  urlData.create({ ogUrl: req.body.url, shortUrl: URL })
   res.render('finished', { URL })
+
 })
 
 
