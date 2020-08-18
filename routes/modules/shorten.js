@@ -63,19 +63,6 @@ router.post('/', (req, res) => {
       }
     })
 
-  // .then(url => res.render('finished', { URL: shortUrl, link: link }))
-
-
-
-  //   shortUrl = url[0].shortUrl)  //將亂數五碼輸出
-  // .then(url => res.render('finished', { URL: shortUrl, link: link }))
-
-
-  // URL = randomURL() //亂數五位數
-  // console.log(URL)
-  // urlData.create({ ogUrl: link, shortUrl: URL }) //存入資料庫
-  // res.render('finished', { URL, link })
-
 })
 
 module.exports = router
